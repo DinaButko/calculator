@@ -1,0 +1,21 @@
+# Ignore Python bytecode files
+__pycache__/
+*.py[cod]
+
+# Ignore pytest cache directory
+.pytest_cache/
+
+# Ignore virtual environments
+venv/
+.env/
+
+# Ignore IDE files (e.g., for VSCode or PyCharm)
+.vscode/
+.idea/
+
+# Ignore test reports and log files
+reports/
+logs/
+
+#Ignore videos
+videos/

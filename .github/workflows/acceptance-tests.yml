@@ -1,0 +1,57 @@
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+
+jobs:
+  playwright:
+    name: 'Acceptance Tests for Google Calculator'
+    runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright/python:v1.47.0-jammy
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: 🔄 Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest-xdist allure-pytest  
+
+      - name: 🚀 Run Acceptance Tests with Allure
+        run: |
+          pytest -n auto --alluredir=reports/allure-results --html=reports/results/report.html  
+
+      # Load the test report history from the gh-pages branch
+      - name: Load test report history
+        uses: actions/checkout@v2
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: allure-history
+
+      # Build the test report including the previous history
+      - name: Build test report
+        uses: simple-elf/allure-report-action@v1.7
+        if: always()
+        with:
+          gh_pages: allure-history
+          allure_results: reports/allure-results
+          allure_history: reports/allure-report
+
+      # Update index.html to point to the latest report
+      - name: Update index.html to latest report
+        run: |
+          LATEST_BUILD_DIR=$(ls -d reports/*/ | grep -oE '[0-9]+' | sort -n | tail -n 1)  # Get the latest build directory
+          echo "<!DOCTYPE html><meta charset='utf-8'><meta http-equiv='refresh' content='0; URL=https://DinaButko.github.io/calculator/$LATEST_BUILD_DIR/'>" > reports/index.html
+
+      # Publish the test report to the gh-pages branch
+      - name: Publish test report
+        uses: peaceiris/actions-gh-pages@v3
+        if: always()
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages  #
+          publish_dir: reports/allure-report

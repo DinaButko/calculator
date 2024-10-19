@@ -1,0 +1,4 @@
+[32m2024-10-19 13:18:42 - INFO - Setting up the calculator page.[0m
+[32m2024-10-19 13:18:44 - INFO -  'test_calculator_negative_number_operations' for -0.1 + -0.2 has started[0m
+[32m2024-10-19 13:18:48 - INFO - Test for -0.1 + -0.2 successfully completed with result -0.3[0m
+[32m2024-10-19 13:18:48 - INFO - Tearing down and cleaning the calculator page.[0m

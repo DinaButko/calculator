@@ -1,0 +1,4 @@
+[32m2024-10-19 13:19:09 - INFO - Setting up the calculator page.[0m
+[32m2024-10-19 13:19:11 - INFO -  'test_calculator_use_result_in_next_operation' for 5 + 5 then × 2 has started[0m
+[32m2024-10-19 13:19:13 - INFO - Test for 5 + 5 followed by × 2 completed with result 20[0m
+[32m2024-10-19 13:19:13 - INFO - Tearing down and cleaning the calculator page.[0m

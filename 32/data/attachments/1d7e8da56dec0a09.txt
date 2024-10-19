@@ -1,0 +1,4 @@
+INFO     tests.conftest:conftest.py:81 Setting up the calculator page.
+INFO     tests.conftest:test_calculator.py:103  'test_calculator_negative_number_operations' for -7.5 ÷ -2.5 has started
+INFO     tests.conftest:test_calculator.py:109 Test for -7.5 ÷ -2.5 successfully completed with result 3
+INFO     tests.conftest:conftest.py:88 Tearing down and cleaning the calculator page.

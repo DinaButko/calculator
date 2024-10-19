@@ -1,0 +1,4 @@
+[32m2024-10-19 14:30:49 - INFO - Setting up the calculator page.[0m
+[32m2024-10-19 14:30:50 - INFO -  'test_calculator_negative_number_operations' for -7.5 ÷ -2.5 has started[0m
+[32m2024-10-19 14:30:53 - INFO - Test for -7.5 ÷ -2.5 successfully completed with result 3[0m
+[32m2024-10-19 14:30:53 - INFO - Tearing down and cleaning the calculator page.[0m

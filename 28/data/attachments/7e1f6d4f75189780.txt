@@ -1,0 +1,3 @@
+[32m2024-10-19 13:26:03 - INFO - Setting up the calculator page.[0m
+[32m2024-10-19 13:26:05 - INFO -  'test_calculator_large_number_operations' for 1000000000 + 2000000000 has started[0m
+[32m2024-10-19 13:26:11 - INFO - Tearing down and cleaning the calculator page.[0m

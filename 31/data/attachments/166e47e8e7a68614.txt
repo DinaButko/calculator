@@ -1,0 +1,4 @@
+[32m2024-10-19 14:26:14 - INFO - Setting up the calculator page.[0m
+[32m2024-10-19 14:26:16 - INFO -  'test_calculator_basic_float_operations' for 5.5 + 2.2 has started[0m
+[32m2024-10-19 14:26:19 - INFO - Test for 5.5 + 2.2 successfully completed with result 7.7[0m
+[32m2024-10-19 14:26:19 - INFO - Tearing down and cleaning the calculator page.[0m

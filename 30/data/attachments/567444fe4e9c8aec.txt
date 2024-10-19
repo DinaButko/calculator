@@ -1,0 +1,4 @@
+INFO     tests.conftest:conftest.py:81 Setting up the calculator page.
+INFO     tests.conftest:test_calculator.py:141  'test_calculator_large_number_operations' for 1000000000000 ÷ 1000000 has started
+INFO     tests.conftest:test_calculator.py:147 Test for 1000000000000 ÷ 1000000 successfully completed with result 1000000
+INFO     tests.conftest:conftest.py:88 Tearing down and cleaning the calculator page.

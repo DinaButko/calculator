@@ -1,0 +1,4 @@
+INFO     tests.conftest:conftest.py:81 Setting up the calculator page.
+INFO     tests.conftest:test_calculator.py:172  'test_calculator_operations_with_zero' for 0 ÷ 0 has started
+INFO     tests.conftest:test_calculator.py:178 Test for 0 ÷ 0 successfully completed with result Error
+INFO     tests.conftest:conftest.py:88 Tearing down and cleaning the calculator page.

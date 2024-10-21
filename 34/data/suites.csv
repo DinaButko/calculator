@@ -1,0 +1,69 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Mon Oct 21 02:33:31 GMT 2024","Mon Oct 21 02:33:34 GMT 2024","2369","tests","test_calculator","","","","test_calculator_operations_with_zero[numbers2-operations2--5-0 - 5 =]","Parametrized test for calculator operations involving 0"
+"passed","Mon Oct 21 02:33:36 GMT 2024","Mon Oct 21 02:33:38 GMT 2024","2276","tests","test_calculator","","","","test_calculator_operations_with_zero[numbers4-operations4-0-0 \xd7 5 =]","Parametrized test for calculator operations involving 0"
+"passed","Mon Oct 21 02:33:19 GMT 2024","Mon Oct 21 02:33:23 GMT 2024","3555","tests","test_calculator","","","","test_calculator_basic_float_operations[numbers4-operations4-0.3-0.1 + 0.2 =]","Parametrized test for basic calculator operations with float numbers"
+"passed","Mon Oct 21 02:34:29 GMT 2024","Mon Oct 21 02:34:34 GMT 2024","5402","tests","test_calculator","","","","test_calculator_step_by_step_cleaning[numbers1-operations1-stepwise_expressions1]","
+    Parametrized test to verify step-by-step clearing of the calculator expression
+    after entering the operation and the second number, but without pressing the equal button.
+    The expression should reduce step by step until fully cleared.
+    "
+"passed","Mon Oct 21 02:33:41 GMT 2024","Mon Oct 21 02:33:44 GMT 2024","3051","tests","test_calculator","","","","test_calculator_operations_with_zero[numbers5-operations5-0-5 \xd7 0 =]","Parametrized test for calculator operations involving 0"
+"passed","Mon Oct 21 02:33:27 GMT 2024","Mon Oct 21 02:33:32 GMT 2024","4310","tests","test_calculator","","","","test_calculator_basic_float_operations[numbers2-operations2-5-2.5 \xd7 2 =]","Parametrized test for basic calculator operations with float numbers"
+"passed","Mon Oct 21 02:33:10 GMT 2024","Mon Oct 21 02:33:13 GMT 2024","2662","tests","test_calculator","","","","test_calculator_negative_number_operations[numbers2-operations2--5-2.5 \xd7 -2 =]","Parametrized test for calculator operations involving negative numbers"
+"passed","Mon Oct 21 02:33:26 GMT 2024","Mon Oct 21 02:33:32 GMT 2024","5857","tests","test_calculator","","","","test_calculator_large_number_operations[numbers2-operations2-1e+19-5000000000 \xd7 2000000000 =]","Parametrized test for calculator operations involving large numbers"
+"passed","Mon Oct 21 02:33:07 GMT 2024","Mon Oct 21 02:33:10 GMT 2024","2775","tests","test_calculator","","","","test_basic_calculator_operations[numbers4-operations4-14-5 + 3 - 2 + 8 =]","Parametrized test for basic calculator operations with multiple numbers and operations"
+"passed","Mon Oct 21 02:33:40 GMT 2024","Mon Oct 21 02:33:42 GMT 2024","2575","tests","test_calculator","","","","test_calculator_operations_with_zero[numbers7-operations7-0-0 \xf7 5 =]","Parametrized test for calculator operations involving 0"
+"passed","Mon Oct 21 02:33:41 GMT 2024","Mon Oct 21 02:33:43 GMT 2024","2425","tests","test_calculator","","","","test_calculator_operations_with_zero[numbers8-operations8-Error-0 \xf7 0 =]","Parametrized test for calculator operations involving 0"
+"passed","Mon Oct 21 02:33:38 GMT 2024","Mon Oct 21 02:33:40 GMT 2024","2160","tests","test_calculator","","","","test_calculator_operations_with_zero[numbers6-operations6-Infinity-5 \xf7 0 =]","Parametrized test for calculator operations involving 0"
+"passed","Mon Oct 21 02:33:31 GMT 2024","Mon Oct 21 02:33:33 GMT 2024","2077","tests","test_calculator","","","","test_calculator_operations_with_zero[numbers0-operations0-5-0 + 5 =]","Parametrized test for calculator operations involving 0"
+"passed","Mon Oct 21 02:33:35 GMT 2024","Mon Oct 21 02:33:38 GMT 2024","2299","tests","test_calculator","","","","test_calculator_operations_with_zero[numbers1-operations1-5-5 + 0 =]","Parametrized test for calculator operations involving 0"
+"passed","Mon Oct 21 02:33:46 GMT 2024","Mon Oct 21 02:33:49 GMT 2024","2323","tests","test_calculator","","","","test_calculator_use_result_in_next_operation[initial_numbers2-initial_operations2-next_operation2-23]","Test using the result of one operation in the next operation."
+"passed","Mon Oct 21 02:33:02 GMT 2024","Mon Oct 21 02:33:05 GMT 2024","3174","tests","test_calculator","","","","test_calculator_negative_number_operations[numbers0-operations0--3.3--5.5 + 2.2 =]","Parametrized test for calculator operations involving negative numbers"
+"passed","Mon Oct 21 02:33:44 GMT 2024","Mon Oct 21 02:33:46 GMT 2024","1767","tests","test_calculator","","","","test_calculator_decimal_precision[numbers1-operations1-1.66666666667]","Test calculator precision for long decimal results like 1 ÷ 3."
+"passed","Mon Oct 21 02:33:12 GMT 2024","Mon Oct 21 02:33:17 GMT 2024","4461","tests","test_calculator","","","","test_calculator_basic_float_operations[numbers0-operations0-7.7-5.5 + 2.2 =]","Parametrized test for basic calculator operations with float numbers"
+"passed","Mon Oct 21 02:33:46 GMT 2024","Mon Oct 21 02:33:48 GMT 2024","2296","tests","test_calculator","","","","test_calculator_use_result_in_next_operation[initial_numbers0-initial_operations0-next_operation0-20]","Test using the result of one operation in the next operation."
+"passed","Mon Oct 21 02:34:26 GMT 2024","Mon Oct 21 02:34:32 GMT 2024","5861","tests","test_calculator","","","","test_calculator_step_by_step_cleaning[numbers0-operations0-stepwise_expressions0]","
+    Parametrized test to verify step-by-step clearing of the calculator expression
+    after entering the operation and the second number, but without pressing the equal button.
+    The expression should reduce step by step until fully cleared.
+    "
+"passed","Mon Oct 21 02:33:23 GMT 2024","Mon Oct 21 02:33:28 GMT 2024","5705","tests","test_calculator","","","","test_calculator_negative_number_operations[numbers4-operations4--0.3--0.1 - 0.2 =]","Parametrized test for calculator operations involving negative numbers"
+"passed","Mon Oct 21 02:33:33 GMT 2024","Mon Oct 21 02:33:36 GMT 2024","2592","tests","test_calculator","","","","test_calculator_operations_with_zero[numbers3-operations3-5-5 - 0 =]","Parametrized test for calculator operations involving 0"
+"passed","Mon Oct 21 02:34:30 GMT 2024","Mon Oct 21 02:34:35 GMT 2024","4821","tests","test_calculator","","","","test_calculator_step_by_step_cleaning[numbers3-operations3-stepwise_expressions3]","
+    Parametrized test to verify step-by-step clearing of the calculator expression
+    after entering the operation and the second number, but without pressing the equal button.
+    The expression should reduce step by step until fully cleared.
+    "
+"passed","Mon Oct 21 02:33:08 GMT 2024","Mon Oct 21 02:33:11 GMT 2024","2993","tests","test_calculator","","","","test_calculator_negative_number_operations[numbers1-operations1--13.6--10.1 - 3.5 =]","Parametrized test for calculator operations involving negative numbers"
+"passed","Mon Oct 21 02:34:30 GMT 2024","Mon Oct 21 02:34:35 GMT 2024","5028","tests","test_calculator","","","","test_calculator_step_by_step_cleaning[numbers2-operations2-stepwise_expressions2]","
+    Parametrized test to verify step-by-step clearing of the calculator expression
+    after entering the operation and the second number, but without pressing the equal button.
+    The expression should reduce step by step until fully cleared.
+    "
+"passed","Mon Oct 21 02:33:49 GMT 2024","Mon Oct 21 02:33:51 GMT 2024","2607","tests","test_calculator","","","","test_calculator_successive_equals[initial_numbers0-initial_operations0-7]","Test that pressing equal repeatedly does not change the result in Google Calculator."
+"passed","Mon Oct 21 02:33:55 GMT 2024","Mon Oct 21 02:33:56 GMT 2024","888","tests","test_calculator","","","","test_calculator_clean_functionality[numbers3-operations3-10-50 \xf7 5 =]","
+    Parametrized test to verify the 'Clear All' (AC) functionality after operations.
+    "
+"passed","Mon Oct 21 02:33:54 GMT 2024","Mon Oct 21 02:33:55 GMT 2024","1445","tests","test_calculator","","","","test_calculator_clean_functionality[numbers2-operations2-200-100 \xd7 2 =]","
+    Parametrized test to verify the 'Clear All' (AC) functionality after operations.
+    "
+"passed","Mon Oct 21 02:33:51 GMT 2024","Mon Oct 21 02:33:53 GMT 2024","2532","tests","test_calculator","","","","test_calculator_successive_equals[initial_numbers1-initial_operations1-12]","Test that pressing equal repeatedly does not change the result in Google Calculator."
+"passed","Mon Oct 21 02:33:47 GMT 2024","Mon Oct 21 02:33:50 GMT 2024","3267","tests","test_calculator","","","","test_calculator_use_result_in_next_operation[initial_numbers1-initial_operations1-next_operation1-7]","Test using the result of one operation in the next operation."
+"passed","Mon Oct 21 02:33:34 GMT 2024","Mon Oct 21 02:33:38 GMT 2024","4822","tests","test_calculator","","","","test_calculator_large_number_operations[numbers3-operations3-1000000-1000000000000 \xf7 1000000 =]","Parametrized test for calculator operations involving large numbers"
+"passed","Mon Oct 21 02:33:02 GMT 2024","Mon Oct 21 02:33:05 GMT 2024","2886","tests","test_calculator","","","","test_basic_calculator_operations[numbers1-operations1-7-10 - 3 =]","Parametrized test for basic calculator operations with multiple numbers and operations"
+"passed","Mon Oct 21 02:33:51 GMT 2024","Mon Oct 21 02:33:54 GMT 2024","2128","tests","test_calculator","","","","test_calculator_clean_functionality[numbers0-operations0-14-5 + 9 =]","
+    Parametrized test to verify the 'Clear All' (AC) functionality after operations.
+    "
+"passed","Mon Oct 21 02:33:02 GMT 2024","Mon Oct 21 02:33:05 GMT 2024","2561","tests","test_calculator","","","","test_basic_calculator_operations[numbers3-operations3-10-50 \xf7 5 =]","Parametrized test for basic calculator operations with multiple numbers and operations"
+"passed","Mon Oct 21 02:33:13 GMT 2024","Mon Oct 21 02:33:21 GMT 2024","7479","tests","test_calculator","","","","test_calculator_large_number_operations[numbers0-operations0-3000000000-1000000000 + 2000000000 =]","Parametrized test for calculator operations involving large numbers"
+"passed","Mon Oct 21 02:33:02 GMT 2024","Mon Oct 21 02:33:04 GMT 2024","1601","tests","test_calculator","","","","test_all_buttons_calculator_present","Verify that all required buttons (digits and operations) for the calculator are present."
+"passed","Mon Oct 21 02:33:16 GMT 2024","Mon Oct 21 02:33:20 GMT 2024","3862","tests","test_calculator","","","","test_calculator_negative_number_operations[numbers3-operations3-3--7.5 \xf7 -2.5 =]","Parametrized test for calculator operations involving negative numbers"
+"passed","Mon Oct 21 02:33:42 GMT 2024","Mon Oct 21 02:33:44 GMT 2024","1282","tests","test_calculator","","","","test_calculator_decimal_precision[numbers0-operations0-0.33333333333]","Test calculator precision for long decimal results like 1 ÷ 3."
+"passed","Mon Oct 21 02:33:53 GMT 2024","Mon Oct 21 02:33:55 GMT 2024","1771","tests","test_calculator","","","","test_calculator_clean_functionality[numbers1-operations1-7-10 - 3 =]","
+    Parametrized test to verify the 'Clear All' (AC) functionality after operations.
+    "
+"passed","Mon Oct 21 02:33:08 GMT 2024","Mon Oct 21 02:33:10 GMT 2024","2746","tests","test_calculator","","","","test_basic_calculator_operations[numbers2-operations2-10000-100 \xd7 100 =]","Parametrized test for basic calculator operations with multiple numbers and operations"
+"passed","Mon Oct 21 02:33:13 GMT 2024","Mon Oct 21 02:33:16 GMT 2024","3588","tests","test_calculator","","","","test_calculator_basic_float_operations[numbers3-operations3-3-7.5 \xf7 2.5 =]","Parametrized test for basic calculator operations with float numbers"
+"passed","Mon Oct 21 02:33:23 GMT 2024","Mon Oct 21 02:33:29 GMT 2024","5357","tests","test_calculator","","","","test_calculator_large_number_operations[numbers1-operations1-999999999998-999999999999 - 1 =]","Parametrized test for calculator operations involving large numbers"
+"passed","Mon Oct 21 02:33:06 GMT 2024","Mon Oct 21 02:33:08 GMT 2024","2576","tests","test_calculator","","","","test_basic_calculator_operations[numbers0-operations0-11-5 + 6 =]","Parametrized test for basic calculator operations with multiple numbers and operations"
+"passed","Mon Oct 21 02:33:19 GMT 2024","Mon Oct 21 02:33:24 GMT 2024","4082","tests","test_calculator","","","","test_calculator_basic_float_operations[numbers1-operations1-6.6-10.1 - 3.5 =]","Parametrized test for basic calculator operations with float numbers"

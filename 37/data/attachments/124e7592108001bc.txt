@@ -1,0 +1,4 @@
+INFO     tests.conftest:conftest.py:82 Setting up the calculator page.
+INFO     tests.conftest:test_calculator.py:288  'test_calculator_successive_equals' for ['4', '3'] ['×'] has started
+INFO     tests.conftest:test_calculator.py:304 Test for successive equals on ['4', '3'] completed successfully
+INFO     tests.conftest:conftest.py:89 Tearing down and cleaning the calculator page.

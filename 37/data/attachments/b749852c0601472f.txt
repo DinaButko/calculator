@@ -1,0 +1,4 @@
+INFO     tests.conftest:conftest.py:82 Setting up the calculator page.
+INFO     tests.conftest:test_calculator.py:209  'test_calculator_operations_with_zero' for ['5', '0'] with operations ['+'] has started
+INFO     tests.conftest:test_calculator.py:220 Test for ['5', '0'] with operations ['+'] successfully completed with result 5
+INFO     tests.conftest:conftest.py:89 Tearing down and cleaning the calculator page.

@@ -1,0 +1,4 @@
+INFO     tests.conftest:conftest.py:82 Setting up the calculator page.
+INFO     tests.conftest:test_calculator.py:159  'test_calculator_basic_float_operations' for ['7.5', '2.5'] with operations ['÷'] has started
+INFO     tests.conftest:test_calculator.py:170 Test for ['7.5', '2.5'] with operations ['÷'] successfully completed with result 3
+INFO     tests.conftest:conftest.py:89 Tearing down and cleaning the calculator page.

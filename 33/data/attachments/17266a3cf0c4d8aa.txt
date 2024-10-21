@@ -1,0 +1,4 @@
+INFO     tests.conftest:conftest.py:81 Setting up the calculator page.
+INFO     tests.conftest:test_calculator.py:288 'test_calculator_clean_functionality' for ['50', '5'] ['÷'] has started
+INFO     tests.conftest:test_calculator.py:314 Test for ['50', '5'] with operations ['÷'] successfully completed with clean functionality and memory retention validated
+INFO     tests.conftest:conftest.py:88 Tearing down and cleaning the calculator page.

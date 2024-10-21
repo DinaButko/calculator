@@ -1,0 +1,4 @@
+[32m2024-10-21 02:47:46 - INFO - Setting up the calculator page.[0m
+[32m2024-10-21 02:47:47 - INFO -  'test_calculator_decimal_precision' for ['10', '6'] with operations ['÷'] has started[0m
+[32m2024-10-21 02:47:49 - INFO - Test for ['10', '6'] with operations ['÷'] completed with expected result 1.66666666667[0m
+[32m2024-10-21 02:47:49 - INFO - Tearing down and cleaning the calculator page.[0m

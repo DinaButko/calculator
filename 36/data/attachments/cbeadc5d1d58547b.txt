@@ -1,0 +1,4 @@
+[32m2024-10-21 02:47:13 - INFO - Setting up the calculator page.[0m
+[32m2024-10-21 02:47:15 - INFO -  'test_calculator_large_number_operations' for ['1000000000', '2000000000'] with operations ['+'] has started[0m
+[32m2024-10-21 02:47:23 - INFO - Test for ['1000000000', '2000000000'] with operations ['+'] successfully completed with result 3000000000[0m
+[32m2024-10-21 02:47:23 - INFO - Tearing down and cleaning the calculator page.[0m

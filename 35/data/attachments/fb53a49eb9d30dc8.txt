@@ -1,0 +1,4 @@
+INFO     tests.conftest:conftest.py:82 Setting up the calculator page.
+INFO     tests.conftest:test_calculator.py:204  'test_calculator_decimal_precision' for ['10', '6'] with operations ['÷'] has started
+INFO     tests.conftest:test_calculator.py:210 Test for ['10', '6'] with operations ['÷'] completed with expected result 1.66666666667
+INFO     tests.conftest:conftest.py:89 Tearing down and cleaning the calculator page.

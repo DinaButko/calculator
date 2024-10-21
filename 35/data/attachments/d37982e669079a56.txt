@@ -1,0 +1,4 @@
+[32m2024-10-21 02:34:08 - INFO - Setting up the calculator page.[0m
+[32m2024-10-21 02:34:10 - INFO -  'test_basic_calculator_operations' for ['50', '5'] with operations ['÷'] has started[0m
+[32m2024-10-21 02:34:13 - INFO - Test for ['50', '5'] with operations ['÷'] successfully completed with result 10[0m
+[32m2024-10-21 02:34:13 - INFO - Tearing down and cleaning the calculator page.[0m

@@ -1,5 +1,5 @@
 import pytest
-import time
+from pages.calculator_page import CalculatorPage
 from tests.conftest import log
 
 """
@@ -59,15 +59,17 @@ def assert_results(calculator, expected_result, expected_expression):
     """
     Helper function to verify that the result and expression are as expected.
     """
-    time.sleep(1)
+
+    calculator_page = CalculatorPage(page=calculator.page)
+    calculator_page.is_visible(selector=calculator_page.expression_field_selector)
 
     # Verify that the operation is visible for the user on the input calculator field
     actual_expression = calculator.get_expression_text().replace('−', '-')
     assert actual_expression == expected_expression, f"Expected expression '{expected_expression}'," \
                                                      f" but got '{actual_expression}'"
 
-    # Verify the result
-    calculator.assert_result(expected_result)
+    # Verify the result of calculation
+    calculator.assert_calculation_result(expected_result)
 
 
 # Test case for verifying buttons presence
@@ -93,7 +95,7 @@ def test_all_buttons_calculator_present(setup_calculator):
         '×': calculator.multiply_button,
         '÷': calculator.divide_button,
         '=': calculator.equal_button,
-        'AC': calculator.clear_all_button
+        'AC': calculator.clear_all_button,
     }
     verify_buttons(operator_buttons)
 
@@ -235,7 +237,7 @@ def test_calculator_decimal_precision(setup_calculator, numbers, operations, exp
     perform_operation(calculator, numbers, operations)
 
     # Assert the final result
-    calculator.assert_result(expected_result)
+    calculator.assert_calculation_result(expected_result)
 
     log.info(f"Test for {numbers} with operations {operations} completed with expected result {expected_result}")
 
@@ -274,7 +276,7 @@ def test_calculator_use_result_in_next_operation(setup_calculator, initial_numbe
     calculator.click_equal()
 
     # Assert the final result
-    calculator.assert_result(expected_result)
+    calculator.assert_calculation_result(expected_result)
 
     log.info(f"Test for {initial_numbers} followed by {next_operation} completed with result {expected_result}")
 
@@ -294,12 +296,12 @@ def test_calculator_successive_equals(setup_calculator, initial_numbers, initial
     perform_operation(calculator, initial_numbers, initial_operations)
 
     # Verify the first result after pressing equal
-    calculator.assert_result(expected_result)
+    calculator.assert_calculation_result(expected_result)
 
     # Press equals multiple times and verify that the result stays the same
     for _ in range(3):
         calculator.click_equal()
-        calculator.assert_result(expected_result)
+        calculator.assert_calculation_result(expected_result)
 
     log.info(f"Test for successive equals on {initial_numbers} completed successfully")
 
@@ -310,29 +312,38 @@ def test_calculator_successive_equals(setup_calculator, initial_numbers, initial
     (['100', '2'], ['×'], '200', '100 × 2 ='),
     (['50', '5'], ['÷'], '10', '50 ÷ 5 =')
 ])
-def test_calculator_clear_all_functionality(setup_calculator, numbers, operations, expected_result, expected_expression):
+def test_calculator_clear_all_functionality(setup_calculator, request, numbers, operations, expected_result,
+                                            expected_expression):
     """
     Parametrized test to verify the 'Clear All' (AC) functionality after operations.
     """
+
+    # Set flag to skip teardown in this specific test
+    request.node.skip_teardown = True
+
     log.info(f"'test_calculator_clean_functionality' for {numbers} {operations} has started")
 
     # Initialize calculator for the test
     calculator = setup_calculator
 
+    calculator_page = CalculatorPage(page=calculator.page)
+
     # Perform the operation
-    perform_operation(calculator, numbers, operations)
+    perform_operation(calculator, numbers, operations, click_equal=True)
 
     # Verify the full operation expression and result
+    calculator.is_visible(selector=calculator_page.expression_field_selector)
     actual_expression = calculator.get_expression_text().replace('−', '-')
     assert actual_expression == expected_expression, \
         f"Expected expression '{expected_expression}', but got '{actual_expression}'"
-    calculator.assert_result(expected_result)
+
+    calculator.assert_calculation_result(expected_result)
 
     # Test Clear All (AC) functionality
     calculator.clear_all()
 
     # Verify the display is reset to 0 after clearing
-    calculator.assert_result('0')
+    calculator.assert_calculation_result('0')
 
     # Verify that the memory retains the previous result as "Ans = X"
     actual_memory_display = calculator.get_expression_text().replace('−', '-')
@@ -351,7 +362,7 @@ def test_calculator_clear_all_functionality(setup_calculator, numbers, operation
     (['5', '1'], ['×'], ['5 × 1', '5 ×', '5', '0']),  # Step-by-step clearing for '5 × 1'
     (['5', '5'], ['÷'], ['5 ÷ 5', '5 ÷', '5', '0'])  # Step-by-step clearing for '5 ÷ 5'
 ])
-def test_calculator_step_by_step_cleaning(setup_calculator, numbers, operations, stepwise_expressions):
+def test_calculator_step_by_step_cleaning(setup_calculator, request, numbers, operations, stepwise_expressions):
     """
     Parametrized test to verify step-by-step clearing of the calculator expression
     after entering the operation and the second number, but without pressing the equal button.
@@ -360,19 +371,20 @@ def test_calculator_step_by_step_cleaning(setup_calculator, numbers, operations,
 
     log.info(f"'test_calculator_step_by_step_cleaning_without_equal' for {numbers} {operations} has started")
 
+    # Set flag to skip teardown in this specific test
+    request.node.skip_teardown = True
+
     # Initialize calculator for the test
     calculator = setup_calculator
 
     # Step 1: Enter the full expression without pressing equal using perform_operation but don't click equal
     perform_operation(calculator, numbers, operations, click_equal=False)
 
-    time.sleep(1)
-
     # Step 2: Clear the expression step by step, excluding the result
     for i in range(len(stepwise_expressions)):
         # Verify that the expression/result is reduced step by step
         expected_expression = stepwise_expressions[i]
-        calculator.assert_result(expected_expression)
+        calculator.assert_calculation_result(expected_expression)
 
         # Press the clear button 
         if i < len(stepwise_expressions) - 1:
@@ -380,9 +392,8 @@ def test_calculator_step_by_step_cleaning(setup_calculator, numbers, operations,
                 calculator.clear_entry()  # Use Clear Entry (CE)
             elif calculator.is_all_clear_visible():
                 calculator.all_clear()  # Use All Clear (AC)
-            time.sleep(1)
 
     # At the final step, the expression should be empty or show '0'
-    calculator.assert_result('0')
+    calculator.assert_calculation_result('0')
 
     log.info(f"Test for {numbers} {operations} successfully completed with step-by-step clearing")

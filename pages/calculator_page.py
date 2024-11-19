@@ -12,7 +12,7 @@ class CalculatorPage(BasePage):
         self.divide_button = "[jsname='WxTTNd']"
         self.clear_all_button = "[jsname='SLn8gc']"  # AC button
         self.clear_entry_button = "[aria-label='clear entry']"  # CE button
-        self.result_field_selector = "[jsname='VssY5c']"
+        self.result_field_selector = "[jsname='VssY5c']"  # Result of calculation
         self.expression_field_selector = "[jsname='ubtiRe']"
 
         # Locators for digit buttons
@@ -31,12 +31,19 @@ class CalculatorPage(BasePage):
         }
 
     def enter_number(self, number: str):
-        """Enter a number by pressing the corresponding digit buttons."""
+        """Enter a number by pressing the corresponding digit buttons, including negative numbers."""
+        # Check if the number is negative
+        if number.startswith('-'):
+            self.click(self.subtract_button)
+            number = number[1:]
+
+        # Enter each digit
         for digit in number:
             if digit in self.digit_buttons:
                 self.click(self.digit_buttons[digit])
             else:
-                raise ValueError(f"Invalid digit '{digit}'. Must be 0-9 or '.'.")
+                raise ValueError(f"Invalid character '{digit}'. Must be 0-9, '.' or '-' at the start.")
+
         return self
 
     def add(self):
@@ -64,13 +71,15 @@ class CalculatorPage(BasePage):
         self.click(self.equal_button)
         return self
 
-    def assert_result(self, expected_result: str):
+    def assert_calculation_result(self, expected_result: str):
         """Assert that the result field contains the expected result."""
+        self.is_visible(selector=self.result_field_selector)
         self.assert_text(self.result_field_selector, expected_result)
         return self
 
     def get_expression_text(self) -> str:
         """Get the current expression displayed in the calculator."""
+        self.is_visible(selector=self.expression_field_selector)
         return self.get_text(self.expression_field_selector).strip()
 
     def clear_entry(self):
@@ -79,6 +88,7 @@ class CalculatorPage(BasePage):
 
     def clear_all(self):
         """Click the clear (AC) button."""
+        self.is_all_clear_visible()
         self.click(self.clear_all_button)
         return self
 

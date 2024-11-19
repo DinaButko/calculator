@@ -1,8 +1,10 @@
 import logging
+import os
+
 import colorlog
 import pytest
-from playwright.sync_api import sync_playwright
 from pages.calculator_page import CalculatorPage
+from playwright.sync_api import sync_playwright
 
 
 # Set up the logger with color support
@@ -29,8 +31,9 @@ def setup_logger():
 # Initialize the logger globally
 log = setup_logger()
 
+"""Playwright Fixtures"""
 
-# Playwright fixtures
+
 @pytest.fixture(scope="session")
 def playwright():
     """Set up Playwright instance for the test session."""
@@ -38,14 +41,32 @@ def playwright():
         yield p
 
 
+def pytest_addoption(parser):
+    """Parser function to help to run tests in different browsers"""
+    parser.addoption(
+        "--browser-name",
+        action="store",
+        default="chromium",
+        choices=["chromium", "firefox", "webkit"],
+        help="Browser to run tests on: chromium, firefox, or webkit"
+    )
+
+
 @pytest.fixture(scope="function")
-def browser(playwright):
-    """Launch the browser instance for each test function."""
-    browser = playwright.chromium.launch(headless=True)
+def browser(playwright, browser_name, request):
+    """Launch the specified browser instance for each test function with unique tracing."""
+    if browser_name == "chromium":
+        browser = playwright.chromium.launch(headless=False)
+    elif browser_name == "firefox":
+        browser = playwright.firefox.launch(headless=False)
+    elif browser_name == "webkit":
+        browser = playwright.webkit.launch(headless=False)
+    else:
+        raise ValueError(f"Unsupported browser: {browser_name}")
 
     # Use browser.new_context to create a context
     context = browser.new_context(
-        record_video_dir="videos/",
+        record_video_dir="../reports/videos",
         record_video_size={"width": 640, "height": 480}
     )
 
@@ -54,8 +75,16 @@ def browser(playwright):
 
     yield context
 
-    # Stop tracing and export it into a zip archive.
-    context.tracing.stop(path="trace.zip")
+    # Generate a unique trace path using test name and test parameters
+    test_name = request.node.name
+    param_values = "_".join(str(value) for value in request.node.callspec.params.values()) \
+        if hasattr(request.node, "callspec") else ""
+    trace_path = f"../reports/traces/{test_name}_{param_values[:0]}_trace.zip"
+    print(f"Trace path for test: {trace_path}")  # Debug line
+    os.makedirs(os.path.dirname(trace_path), exist_ok=True)
+
+    # Stop tracing and export it into a unique zip archive per test
+    context.tracing.stop(path=trace_path)
 
     # Close context before closing the browser
     context.close()
@@ -77,17 +106,21 @@ def base_calculator_url():
 
 
 @pytest.fixture(scope="function")
-def setup_calculator(page, base_calculator_url):
-    """Fixture to initialize CalculatorPage, visit the URL, and clean up afterward."""
+def setup_calculator(request, page, base_calculator_url):
+    """Fixture to initialize CalculatorPage, visit the URL, and conditionally clean up afterward."""
     log.info("Setting up the calculator page.")
     calculator = CalculatorPage(page)
     calculator.navigate(base_calculator_url)
 
+    # Flag to the request object to control teardown
+    request.node.skip_teardown = False
+
     yield calculator
 
-    # Perform cleanup after test
-    log.info("Tearing down and cleaning the calculator page.")
-    try:
-        calculator.clear_all()
-    except Exception as e:
-        log.error(f"Failed to clear calculator during teardown: {e}")
+    # Perform cleanup after test unless skip_teardown is True
+    if not request.node.skip_teardown:
+        log.info("Tearing down and cleaning the calculator page.")
+        try:
+            calculator.clear_all()
+        except Exception as e:
+            log.error(f"Failed to clear calculator during teardown: {e}")

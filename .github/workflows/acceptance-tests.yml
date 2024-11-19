@@ -8,7 +8,7 @@ jobs:
     name: 'Acceptance Tests for Google Calculator'
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright/python:v1.47.0-jammy
+      image: mcr.microsoft.com/playwright/python:v1.48.0-jammy
 
     steps:
       - uses: actions/checkout@v3

@@ -1,0 +1,4 @@
+INFO     tests.conftest:conftest.py:111 Setting up the calculator page.
+INFO     tests.conftest:test_calculator.py:290  'test_calculator_successive_equals' for ['5', '2'] ['+'] has started
+INFO     tests.conftest:test_calculator.py:306 Test for successive equals on ['5', '2'] completed successfully
+INFO     tests.conftest:conftest.py:122 Tearing down and cleaning the calculator page.

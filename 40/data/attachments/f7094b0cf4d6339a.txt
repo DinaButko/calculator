@@ -1,0 +1,4 @@
+INFO     tests.conftest:conftest.py:111 Setting up the calculator page.
+INFO     tests.conftest:test_calculator.py:78 Test 'test_all_buttons_calculator_present' has started
+INFO     tests.conftest:test_calculator.py:102 Test 'test_all_buttons_calculator_present' successfully completed
+INFO     tests.conftest:conftest.py:122 Tearing down and cleaning the calculator page.

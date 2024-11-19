@@ -1,0 +1,4 @@
+INFO     tests.conftest:conftest.py:111 Setting up the calculator page.
+INFO     tests.conftest:test_calculator.py:184  'test_calculator_large_number_operations' for ['999999999999', '1'] with operations ['-'] has started
+INFO     tests.conftest:test_calculator.py:195 Test for ['999999999999', '1'] with operations ['-'] successfully completed with result 999999999998
+INFO     tests.conftest:conftest.py:122 Tearing down and cleaning the calculator page.

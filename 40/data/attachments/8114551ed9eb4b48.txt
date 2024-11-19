@@ -1,0 +1,4 @@
+INFO     tests.conftest:conftest.py:111 Setting up the calculator page.
+INFO     tests.conftest:test_calculator.py:161  'test_calculator_basic_float_operations' for ['0.1', '0.2'] with operations ['+'] has started
+INFO     tests.conftest:test_calculator.py:172 Test for ['0.1', '0.2'] with operations ['+'] successfully completed with result 0.3
+INFO     tests.conftest:conftest.py:122 Tearing down and cleaning the calculator page.

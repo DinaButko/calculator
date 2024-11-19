@@ -1,0 +1,1 @@
+Trace path for test: ../reports/traces/test_calculator_use_result_in_next_operation[chromium-initial_numbers1-initial_operations1-next_operation1-7]__trace.zip

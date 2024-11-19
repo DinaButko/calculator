@@ -1,0 +1,1 @@
+Trace path for test: ../reports/traces/test_calculator_operations_with_zero[chromium-numbers2-operations2--5-0 - 5 =]__trace.zip

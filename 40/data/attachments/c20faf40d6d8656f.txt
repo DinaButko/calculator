@@ -1,0 +1,4 @@
+INFO     tests.conftest:conftest.py:111 Setting up the calculator page.
+INFO     tests.conftest:test_calculator.py:253  'test_calculator_use_result_in_next_operation' for ['5', '5'] with operations ['+'] then ('×', '2') has started
+INFO     tests.conftest:test_calculator.py:281 Test for ['5', '5'] followed by ('×', '2') completed with result 20
+INFO     tests.conftest:conftest.py:122 Tearing down and cleaning the calculator page.

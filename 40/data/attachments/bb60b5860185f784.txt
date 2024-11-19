@@ -1,0 +1,1 @@
+Trace path for test: ../reports/traces/test_calculator_successive_equals[chromium-initial_numbers0-initial_operations0-7]__trace.zip

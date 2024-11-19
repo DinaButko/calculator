@@ -1,0 +1,1 @@
+Trace path for test: ../reports/traces/test_calculator_clear_all_functionality[chromium-numbers3-operations3-10-50 \xf7 5 =]__trace.zip

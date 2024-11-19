@@ -56,11 +56,11 @@ def pytest_addoption(parser):
 def browser(playwright, browser_name, request):
     """Launch the specified browser instance for each test function with unique tracing."""
     if browser_name == "chromium":
-        browser = playwright.chromium.launch(headless=False)
+        browser = playwright.chromium.launch(headless=True)
     elif browser_name == "firefox":
-        browser = playwright.firefox.launch(headless=False)
+        browser = playwright.firefox.launch(headless=True)
     elif browser_name == "webkit":
-        browser = playwright.webkit.launch(headless=False)
+        browser = playwright.webkit.launch(headless=True)
     else:
         raise ValueError(f"Unsupported browser: {browser_name}")
 
